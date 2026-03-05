@@ -13,6 +13,15 @@ const projects =[
         live: "#",
         photo_url: "/Acme_Dashboard.png"
     },
+    { 
+        id: 1, 
+        name: "Vertex Detailing", 
+        description: "Proyecto real para una empresa de detailing, con funcionalidad de reserva de citas y gestión de servicios a traves de un formulario ", 
+        tech: ["Next.js", "React", "Tailwind CSS"], 
+        github: "#", 
+        live: "https://vertexdetailing.vercel.app/",
+        photo_url: "/Logo_vertex_detailing.jpg"
+    },
 ]
 
 export default function MyProjects() {
@@ -68,7 +77,7 @@ export default function MyProjects() {
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live
                     </a>
-                  </div>
+                  </div> 
                 </CardContent>
               </Card>
             ))}

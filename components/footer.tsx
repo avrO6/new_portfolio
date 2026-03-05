@@ -1,7 +1,20 @@
+"use client";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
+
 
 export default function Footer(){
+  
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("alvarogarciadelatorrenovillo@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
     return(
         <div className="container max-w-6xl mx-auto text-center">
           <div className="p-6 bg-card/30 rounded-lg terminal-border mb-8 max-w-2xl mx-auto">
@@ -13,10 +26,11 @@ export default function Footer(){
             </p>
             <div className="flex justify-center gap-4 mb-4">
               <Button 
+                onClick={copyEmail}
                 className="font-mono bg-primary hover:bg-primary/90 glow-effect"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                contact()
+                {copied ? "copied()" : "contact()"}
               </Button>
               <a 
                 href="https://github.com/avrO6"
